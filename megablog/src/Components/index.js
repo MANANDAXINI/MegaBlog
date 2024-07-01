@@ -9,9 +9,10 @@ import SignUp from "./SignUp";
 import Login from "./Login";
 import Button from "./Button";
 import PostForm from "./post-form/PostForm";
-import Postcards from "./Postcards"
+import Postcards from "./Postcards";
 import AuthLayout from "./AuthLayout";
 import Input from "./Input";
+
 export {
     Header,
     Footer,
@@ -24,7 +25,7 @@ export {
     Button,
     PostForm,
     Postcards,
-    AuthLayout, 
+    AuthLayout,
     Input,
     Select,
-}
+};

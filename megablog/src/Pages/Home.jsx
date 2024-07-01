@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import appwriteService from '../appwrite/config';
-import { Container } from '../Components/container/Container';
-import PostCards from '../Components/Postcards'; // Corrected import path for Postcards
+import { Container, Postcards } from '../Components';
 
 function Home() {
     const [posts, setPosts] = useState([]);
@@ -29,13 +28,14 @@ function Home() {
             </div>
         );
     }
+
     return (
         <div className='w-full py-8'>
             <Container>
                 <div className='flex flex-wrap'>
                     {posts.map((post) => (
                         <div key={post.$id} className='p-2 w-1/4'>
-                            <PostCards {...post} />
+                            <Postcards {...post} />
                         </div>
                     ))}
                 </div>
