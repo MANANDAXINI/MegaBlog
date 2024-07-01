@@ -9,7 +9,7 @@ import SignUp from "./SignUp";
 import Login from "./Login";
 import Button from "./Button";
 import PostForm from "./post-form/PostForm";
-import PostCard from "./PostCard";
+import Postcards from "./Postcards"
 import AuthLayout from "./AuthLayout";
 import Input from "./Input";
 export {
@@ -23,7 +23,7 @@ export {
     Login,
     Button,
     PostForm,
-    PostCard,
+    Postcards,
     AuthLayout, 
     Input,
     Select,

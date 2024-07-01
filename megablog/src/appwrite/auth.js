@@ -1,7 +1,9 @@
+// auth.js
+
 import conf from '../conf/conf.js';
 import { Client, Account, ID } from "appwrite";
 
-export class AuthService {
+class AuthService {
     client = new Client();
     account;
 
@@ -46,9 +48,32 @@ export class AuthService {
             await this.account.deleteSessions();
         } catch (error) {
             console.error("Error logging out:", error);
+            throw error;
         }
     }
 }
 
 const authService = new AuthService();
-export default authService;
+
+// Exporting logout function separately
+export const logout = async () => {
+    try {
+        await authService.logout();
+    } catch (error) {
+        console.error("Error logging out:", error);
+        throw error;
+    }
+};
+
+// Exporting login function
+export const login = async (data) => {
+    try {
+        const session = await authService.login(data);
+        return session;
+    } catch (error) {
+        console.error("Error logging in:", error);
+        throw error;
+    }
+};
+
+export default authService; // Exporting authService as the default export
